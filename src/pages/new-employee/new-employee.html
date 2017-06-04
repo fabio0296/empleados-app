@@ -1,0 +1,28 @@
+<!--
+  Generated template for the NewEmployee page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Agregar Nuevo Empleado</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label floating>Nombre</ion-label>
+    <ion-input type="text" [(ngModel)]="empl.firstname" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Apellidos</ion-label>
+    <ion-input type="text" [(ngModel)]="empl.lastname" required></ion-input>
+  </ion-item>
+  <div class="actions">
+    <button ion-button (tap)="guardarEmpleado()">Guardar</button>
+  </div>
+</ion-content>
