@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { NavController, ActionSheetController } from 'ionic-angular';
 import { EmpleadoService } from '../../services/empleados.service';
 import { Empleado } from '../../models/IEmpleado';
-import { NewEmployee } from '../new-employee/new-employee'
+import { NewEmployee } from '../new-employee/new-employee';
+import { Details } from '../details/details';
+import { Edit } from '../edit/edit';
 
 @Component({
   selector: 'page-home',
@@ -30,7 +32,7 @@ export class HomePage implements OnInit{
   goToNewEmployee(){
     this.navCtrl.push(NewEmployee);
   }
-  showOptions(empl){
+  showOptions(empl: Empleado){
     let actionPreset = this.actionSheetCtrl.create({
       title: 'Empleado',
       buttons: [
@@ -42,7 +44,7 @@ export class HomePage implements OnInit{
         },
         {
           text: 'Editar',
-          handler: ()=>{ console.log('Editando'); }
+          handler: ()=>{ this.navCtrl.push(Edit, { id: empl._id }) }
         },
         {
           text: 'Cancelar',
@@ -52,5 +54,8 @@ export class HomePage implements OnInit{
       ]
     });
     actionPreset.present();
+  }
+  goToEdit(empl: Empleado){
+    this.navCtrl.push(Details, { id: empl._id });
   }
 }

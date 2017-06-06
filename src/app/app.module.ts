@@ -7,6 +7,8 @@ import { AboutPage } from '../pages/about/about';
 import { NewEmployee } from '../pages/new-employee/new-employee';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { Details } from '../pages/details/details';
+import { Edit } from '../pages/edit/edit';
 import { HttpModule } from '@angular/http';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -17,6 +19,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     NewEmployee,
     HomePage,
+    Details,
+    Edit,
     TabsPage
   ],
   imports: [
@@ -29,6 +33,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     AboutPage,
     NewEmployee,
+    Details,
+    Edit,
     HomePage,
     TabsPage
   ],

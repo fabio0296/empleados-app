@@ -6,7 +6,7 @@
 
 <ion-content padding>
 <ion-list> 
-  <ion-item *ngFor="let empl of empleados" (press)="showOptions(empl)">
+  <ion-item *ngFor="let empl of empleados" (press)="showOptions(empl)" (tap)="goToEdit(empl)">
     <ion-avatar item-left></ion-avatar>
     <h2>{{ empl.firstname}}</h2>
   </ion-item>
