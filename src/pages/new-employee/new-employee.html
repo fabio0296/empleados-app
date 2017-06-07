@@ -22,7 +22,12 @@
     <ion-label floating>Apellidos</ion-label>
     <ion-input type="text" [(ngModel)]="empl.lastname" required></ion-input>
   </ion-item>
+  <ion-item>
+    <ion-label>Ubicacion</ion-label>
+    <ion-toggle [(ngModel)]="gelocate" (ionChange)="getLocation()"></ion-toggle>
+  </ion-item>
+  <button ion-button block color="light" (tap)="tomarFoto()">Tomar Foto <ion-icon name="camera"></ion-icon></button>
   <div class="actions">
-    <button ion-button (tap)="guardarEmpleado()">Guardar</button>
+    <button ion-button (tap)="guardarEmpleado()" [disabled]="!debeEnviar">Guardar</button>
   </div>
 </ion-content>

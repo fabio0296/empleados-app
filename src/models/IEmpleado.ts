@@ -4,7 +4,10 @@ export interface Empleado{
   lastname: String,
   photo?: String,
   latitude?:String,
-  longitude?:String
+  longitude?:String,
+  setCoords(coords:any) : void,
+  cleanCoords(): void
+
 }
 
 export class CEmpleado implements Empleado{
@@ -29,5 +32,13 @@ export class CEmpleado implements Empleado{
     if(longitude){
       this.longitude = longitude;
     }
+  }
+  setCoords(coords){
+    this.latitude = coords.latitude;
+    this.longitude = coords.longitude;
+  }
+  cleanCoords(){
+    this.latitude = null;
+    this.longitude = null;
   }
 }

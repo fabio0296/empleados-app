@@ -25,6 +25,7 @@ export class Edit {
     console.log('ionViewDidLoad Edit');
   }
   editarEmpleado(){
+    console.log(this.empleado);
     this.service.editarEmpleado(this.empleado).subscribe((empl)=>{ 
       console.log(empl);
       this.navCtrl.pop();
